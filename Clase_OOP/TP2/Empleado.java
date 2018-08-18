@@ -73,10 +73,17 @@ public class Empleado{
     }
     
     private double adicional(){
-        if(antiguedad() < 2) return (this.getSueldoBasico() * 0.02);
-        else if(antiguedad() >= 2 && antiguedad() < 10)
-                return (this.getSueldoBasico() * 0.04);
-             else return (this.getSueldoBasico() * 0.06);
+        int antiguedad = antiguedad();
+        double adicional;
+
+        if (antiguedad < 2)
+            adicional = this.getSueldoBasico() * 0.02;
+        else if (antiguedad < 10)
+            adicional = this.getSueldoBasico() * 0.04;
+        else
+            adicional = this.getSueldoBasico() * 0.06;
+
+        return adicional;
     }
     
     public double sueldoNeto(){
